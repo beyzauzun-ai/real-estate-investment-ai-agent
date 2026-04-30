@@ -17,7 +17,7 @@ import re
 import google.generativeai as genai
 
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-model = genai.GenerativeModel("gemini-1.0-pro")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.set_page_config(page_title="Real Estate AI Agent", page_icon="🏡", layout="centered")
 
