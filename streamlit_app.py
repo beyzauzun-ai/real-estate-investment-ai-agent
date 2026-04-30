@@ -1,7 +1,15 @@
 from google.cloud import bigquery
+from google.oauth2 import service_account
+import streamlit as st
 
-client = bigquery.Client()
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
+)
 
+client = bigquery.Client(
+    credentials=credentials,
+    project=credentials.project_id
+)
 
 import streamlit as st
 import subprocess
