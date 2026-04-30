@@ -14,10 +14,10 @@ client = bigquery.Client(
 import streamlit as st
 import subprocess
 import re
-import google.generativeai as genai
+from google import genai
 
-genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-model = genai.GenerativeModel("gemini-2.0-flash")
+
+client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 
 st.set_page_config(page_title="Real Estate AI Agent", page_icon="🏡", layout="centered")
 
@@ -48,8 +48,13 @@ Analyze the following location and provide:
 User question: {question}
 """
 
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+    model="gemini-1.5-flash",
+    contents=prompt
+    )
+
     return response.text, ""
+    
 
 
 
