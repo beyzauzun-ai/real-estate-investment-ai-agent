@@ -50,14 +50,14 @@ Analyze the following location and provide:
 User question: {question}
 """
 for i in range(3):
-        try:
-            response = gemini_client.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=prompt
-            )
-            return response.text, ""
-        except Exception as e:
-            time.sleep(2)
+    try:
+        response = gemini_client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+        return response.text, ""
+    except Exception as e:
+        time.sleep(2)
 
 return "", "Model yoğun, tekrar deneyin."
 
