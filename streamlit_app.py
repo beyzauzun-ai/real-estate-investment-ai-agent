@@ -14,6 +14,10 @@ client = bigquery.Client(
 import streamlit as st
 import subprocess
 import re
+import google.generativeai as genai
+
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.set_page_config(page_title="Real Estate AI Agent", page_icon="🏡", layout="centered")
 
@@ -32,17 +36,23 @@ def clean_output(text):
     for p in patterns:
         text = re.sub(p, "", text)
     return text.strip()
-
 def ask_agent(question):
-    # cmd = f'printf "%s\n" "{question}" | adk run mcp_bakery_app'
-    # result = subprocess.run(
-    #    cmd,
-    #   shell=True,
-    #  capture_output=True,
-    # text=True,
-    # timeout=300
-    #)
-    return "ADK devre dışı", ""
+    prompt = f"""
+You are a real estate investment advisor.
+
+Analyze the following location and provide:
+- Price trend
+- Risk level
+- Final recommendation (BUY / HOLD / AVOID)
+
+User question: {question}
+"""
+
+    response = model.generate_content(prompt)
+    return response.text, ""
+
+
+
 
 def get_recommendation(text):
     text = text.lower()
