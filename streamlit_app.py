@@ -34,15 +34,15 @@ def clean_output(text):
     return text.strip()
 
 def ask_agent(question):
-    cmd = f'printf "%s\n" "{question}" | adk run mcp_bakery_app'
-    result = subprocess.run(
-        cmd,
-        shell=True,
-        capture_output=True,
-        text=True,
-        timeout=300
-    )
-    return clean_output(result.stdout), result.stderr
+    # cmd = f'printf "%s\n" "{question}" | adk run mcp_bakery_app'
+    # result = subprocess.run(
+    #    cmd,
+    #   shell=True,
+    #  capture_output=True,
+    # text=True,
+    # timeout=300
+    #)
+    return "ADK devre dışı", ""
 
 def get_recommendation(text):
     text = text.lower()
