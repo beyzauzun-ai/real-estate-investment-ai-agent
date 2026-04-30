@@ -16,8 +16,7 @@ import subprocess
 import re
 from google import genai
 
-
-client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
+gemini_client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 
 st.set_page_config(page_title="Real Estate AI Agent", page_icon="🏡", layout="centered")
 
@@ -48,15 +47,13 @@ Analyze the following location and provide:
 User question: {question}
 """
 
-    response = client.models.generate_content(
+    response = gemini_client.models.generate_content(
     model="gemini-2.5-flash",
     contents=prompt
     )
 
     return response.text, ""
     
-
-
 
 
 def get_recommendation(text):
