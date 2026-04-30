@@ -35,6 +35,9 @@ def clean_output(text):
     for p in patterns:
         text = re.sub(p, "", text)
     return text.strip()
+
+import time 
+
 def ask_agent(question):
     prompt = f"""
 You are a real estate investment advisor.
@@ -46,14 +49,17 @@ Analyze the following location and provide:
 
 User question: {question}
 """
+for i in range(3):
+        try:
+            response = gemini_client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=prompt
+            )
+            return response.text, ""
+        except Exception as e:
+            time.sleep(2)
 
-    response = gemini_client.models.generate_content(
-    model="gemini-2.5-flash",
-    contents=prompt
-    )
-
-    return response.text, ""
-    
+return "", "Model yoğun, tekrar deneyin."
 
 
 def get_recommendation(text):
