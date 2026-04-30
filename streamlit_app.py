@@ -57,7 +57,6 @@ def get_recommendation(text):
 
 def get_real_data(city):
     from google.cloud import bigquery
-    client = bigquery.Client()
 
    
     if city is None:
