@@ -3,3 +3,4 @@ pandas
 google-cloud-bigquery
 db-dtypes
 google-adk
+google-generativeai
