@@ -229,8 +229,3 @@ with st.chat_message("assistant"):
             location_query = location_query if location_query else "New York Manhattan"
             map_url = f"https://www.google.com/maps?q={place_type}+near+{location_query}&output=embed"
             st.components.v1.iframe(map_url, height=400) 
-
-        else:
-            st.warning("Cevap alınamadı.")
-            if error:
-                st.text(error)
