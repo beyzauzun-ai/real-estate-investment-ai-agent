@@ -8,7 +8,7 @@ An AI-powered web application that analyzes real estate investments and provides
 
 ![App Demo](demo.gif)
 
-▶️ Full video:  
+## ▶️ Full video:  
 https://www.linkedin.com/posts/beyza-uzun-1520672b5_ai-machinelearning-dataanalytics-ugcPost-7455885691860938752-42vk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEumJg4BDP9c3iLiOmqBOs-X4Iyb0soZjR0
 ---
 
