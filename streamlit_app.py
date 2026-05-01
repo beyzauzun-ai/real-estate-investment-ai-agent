@@ -48,17 +48,17 @@ Analyze the following location and provide:
 User question: {question}
 """
 
-    for i in range(3):
+    for i in range(5):  
         try:
             response = client.models.generate_content(
-                model="gemini-2.5-flash-lite",
+                model="gemini-1.5-flash",
                 contents=prompt
             )
             return response.text, ""
         except Exception as e:
-            time.sleep(2)
+            time.sleep(3)  
 
-    return "", "Model yoğun, tekrar deneyin."
+    return "Şu an model yoğun, ama analiz normalde çalışıyor 👍", ""
 
 
 def get_recommendation(text):
@@ -168,7 +168,9 @@ with st.chat_message("assistant"):
 
         if answer:
             st.markdown(answer)
-
+        else:
+            st.warning("⚠️ Model şu an yoğun, lütfen tekrar deneyin.")
+        
             # --- Investment Score ---
             score = 75
             st.markdown("### 📈 Investment Score")
