@@ -33,17 +33,15 @@ https://www.linkedin.com/posts/beyza-uzun-1520672b5_ai-machinelearning-dataanaly
 
 ---
 
-## 💡 How It Works
+## 🧠 How It Works
 
-1. User enters a location (e.g., Manhattan, Los Angeles)
-2. App fetches real estate-related insights
-3. AI analyzes:
-   - Price trend  
-   - Risk level  
-   - Investment potential  
-4. Returns:
-   👉 BUY / HOLD / AVOID recommendation
-
+1. User enters a location (e.g., New York Manhattan)
+2. Data is fetched from BigQuery
+3. Gemini analyzes:
+   - price trends
+   - risk level
+4. System generates final recommendation
+5. Results are displayed with charts & map
 ---
 
 ## 📌 Example Usage
@@ -51,6 +49,7 @@ Analyze real estate investment in Manhattan New York and give BUY/HOLD/AVOID
 
 ---
 
+  
 ## ⚠️ Notes
 
 - AI responses may occasionally be delayed due to API load.
