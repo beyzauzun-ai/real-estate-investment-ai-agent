@@ -71,7 +71,7 @@ This project demonstrates:
 ## 🙋‍♀️ Author
 
 **Beyza Uzun**  
-- LinkedIn: https://linkedin.com/in/your-link  
+- LinkedIn: https://www.linkedin.com/in/beyza-uzun-1520672b5/
 - GitHub: https://github.com/beyzauzun-ai  
 
 ---
