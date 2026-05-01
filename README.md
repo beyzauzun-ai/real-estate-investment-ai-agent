@@ -66,11 +66,6 @@ This project demonstrates:
 - Building production-ready Streamlit apps  
 - Handling API failures gracefully  
 
----
-
-## 📷 Screenshots
-
-(Add your app screenshots here)
 
 ---
 
